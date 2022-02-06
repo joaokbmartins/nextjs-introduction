@@ -7,13 +7,17 @@ export type Album = {
   title: String;
 };
 
-export type AlbumHomePageProps = { albums: Album[] };
+export type AlbumHomePageProps = { albums: Album[]; time: Date };
 
 const AlbumHomePage: NextPage<AlbumHomePageProps> = (props) => {
   const { albums } = props;
+
   return (
     <div>
       <h1>Albuns List - Static</h1>
+
+      <small>{props.time}</small>
+
       <ul>
         {albums.map((album, key) => {
           return <li key={key}> {album.title} </li>;
@@ -24,13 +28,16 @@ const AlbumHomePage: NextPage<AlbumHomePageProps> = (props) => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
+  /* Static Site Generation - SSG */
   const { data: albums } = await axios.get(
     "https://jsonplaceholder.typicode.com/albums"
   );
   return {
     props: {
       albums,
+      time: new Date().toString(),
     },
+    revalidate: 10 /* Incremental Static Regeneration - ISR */,
   };
 };
 

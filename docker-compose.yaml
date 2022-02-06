@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    container_name: nextjs-introduction
+    entrypoint: sh -c "npm install && npm run build && npm start"
+    volumes:
+      - .:/home/node/app
+    ports:
+      - 80:3000
