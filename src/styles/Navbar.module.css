@@ -1,0 +1,15 @@
+.navbar {
+  padding: 0 2rem;
+  display: flex;
+  background-color: lightgray;
+}
+
+.navbarItem {
+  padding: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.navbarItem:hover {
+  background-color: rgba(128, 128, 128, 0.144);
+}
