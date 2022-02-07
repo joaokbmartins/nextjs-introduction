@@ -35,7 +35,7 @@ const TweetHomePage: NextPage<TweetHomePageProps> = (props) => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   /*        SERVER SIDE RENDER - SSR*/
-  const { data: tweets } = await axios.get("http://localhost:3000/api/tweets");
+  const { data: tweets } = await axios.get(`${process.env.HOST}/api/tweets`);
 
   return {
     props: {

@@ -12,7 +12,7 @@
 
 --- 
 
-Check it out: https://nextjs-introduction-nine.vercel.app/
+Check it out: https://nextjsintroduction.vercel.app/
 
 Run locally with Docker:
 

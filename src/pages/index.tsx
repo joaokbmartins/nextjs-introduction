@@ -9,6 +9,7 @@ type PageContent = {
 
 const Home: NextPage<PageContent> = (props) => {
   const { content } = props;
+  const { HOST } = process.env;
   return (
     <div className={styles.container}>
       <h1>Home Content</h1>
