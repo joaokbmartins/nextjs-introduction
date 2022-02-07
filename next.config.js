@@ -3,11 +3,10 @@ const {
   PHASE_PRODUCTION_BUILD,
 } = require("next/constants");
 
+/**
+ * @type {import('next').NextConfig}
+ */
 module.exports = (phase, { defaultConfig }) => {
-  /**
-   * @type {import('next').NextConfig}
-   */
-
   const { STAGING } = process.env;
   const isDev = phase === PHASE_DEVELOPMENT_SERVER;
   const isPrd = phase === PHASE_PRODUCTION_BUILD && STAGING !== "1";
@@ -20,7 +19,6 @@ module.exports = (phase, { defaultConfig }) => {
     })(),
   };
 
-  // const nextConfig = {};
   return {
     reactStrictMode: true,
     env,

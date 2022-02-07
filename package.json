@@ -1,5 +1,6 @@
 {
   "name": "nextjs-introduction",
+  "version": "1.0.0-beta01",
   "private": true,
   "scripts": {
     "dev": "next dev",
